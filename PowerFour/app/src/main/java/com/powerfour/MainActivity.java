@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        //modifications
-        String message = "ciao";
+        RegisterID();
 
-      /*  Intent loginIntent = new Intent(this, LoginActivity.class);
+        //TOOD: Login part
+        /*Intent loginIntent = new Intent(this, LoginActivity.class);
         loginIntent.putExtra(EXTRA_MESSAGE, message);
         startActivityForResult(loginIntent, 1);*/
 
@@ -141,6 +141,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    protected void RegisterID() {
+        if (checkPlayServices()) {
+            Intent intent = new Intent(this, RegistrationIntentService.class);
+            startService(intent);
+        }
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -158,8 +165,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }//onActivityResult
-
-
 
     private static ArrayList<View> getViewsByTag(ViewGroup root, String tag) {
         ArrayList<View> views = new ArrayList<View>();

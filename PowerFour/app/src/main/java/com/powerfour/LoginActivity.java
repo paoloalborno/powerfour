@@ -172,6 +172,11 @@ public class LoginActivity extends AppCompatActivity {
                 toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
                 toast.show();
             }
+
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra("result",result);
+            setResult(Activity.RESULT_OK,returnIntent);
+            finish();
         }
     }
 

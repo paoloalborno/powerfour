@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
         //modifications
         String message = "ciao";
 
-        Intent loginIntent = new Intent(this, LoginActivity.class);
+      /*  Intent loginIntent = new Intent(this, LoginActivity.class);
         loginIntent.putExtra(EXTRA_MESSAGE, message);
-        startActivityForResult(loginIntent, 1);
+        startActivityForResult(loginIntent, 1);*/
 
         /*WebView myWebView = (WebView) findViewById(R.id.webView);
         myWebView.loadUrl("http://www.pw4.net");*/

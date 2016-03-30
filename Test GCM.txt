@@ -1,0 +1,47 @@
+//http://phpfiddle.org/
+
+
+
+
+<?php
+// API access key from Google API's Console
+define( 'API_ACCESS_KEY', 'AIzaSyDnVbF18CsZfCN-e6XZ0KulDNaKigLJXXI' );
+
+
+$registrationIds = array("dhjBLpivrvQ:APA91bGag0r47LHaTtXRm3xz5qECp_0If7rV8iQvPTqwTBLtb6hVPgP5xUnVJmSdKNEaWJ1PPDCzazfRtAIapcCYwTaNSsp0ZC__zaValyYEGO4s9sdYycL_tMBZBOh07CYLUtqdfz0i" );
+
+// prep the bundle
+$msg = array
+(
+    'message'       => 'here is a message. message',
+    'title'         => 'This is a title. title',
+    'subtitle'      => 'This is a subtitle. subtitle',
+    'tickerText'    => 'Ticker text here...Ticker text here...Ticker text here',
+    'vibrate'   => 1,
+    'sound'     => 1
+);
+
+$fields = array
+(
+    'registration_ids'  => $registrationIds,
+    'data'              => $msg
+);
+
+$headers = array
+(
+    'Authorization: key=' . API_ACCESS_KEY,
+    'Content-Type: application/json'
+);
+
+$ch = curl_init();
+curl_setopt( $ch,CURLOPT_URL, 'https://android.googleapis.com/gcm/send' );
+curl_setopt( $ch,CURLOPT_POST, true );
+curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
+curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
+curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
+curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
+$result = curl_exec($ch );
+curl_close( $ch );
+
+echo $result;
+?>

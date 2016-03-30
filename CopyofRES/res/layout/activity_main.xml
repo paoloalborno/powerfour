@@ -1,0 +1,99 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/bgpw4"
+    android:orientation="vertical" tools:context=".MainActivity">
+    <!--
+      <TextView android:text="@string/registering_message" android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/informationTextView"
+          android:textAppearance="?android:attr/textAppearanceMedium" />
+
+      <ProgressBar
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/registrationProgressBar"
+          android:layout_below="@+id/informationTextView"
+          android:layout_alignParentStart="true" />
+
+                    android:layout_below="@+id/registrationProgressBar"
+
+          !-->
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/banner1" />
+
+      <ListView
+          android:id="@+id/list"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_alignParentStart="true"
+          android:layout_marginTop="120dp"
+          android:layout_alignParentEnd="true">
+
+      </ListView>
+
+
+
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SERVER BF4 : (next app version)"
+            android:gravity="center"
+            android:background="@drawable/bg_black"
+            android:id="@+id/pw4Server" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="SERVER TEAMSPEAK : (next app version)"
+            android:gravity="center"
+            android:background="@drawable/bg_black"
+            android:id="@+id/tsServer" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="GO TO PW4"
+            android:textColor="#fffad7"
+            android:background="@drawable/bg_black"
+            android:id="@+id/pw4_button" />
+    </LinearLayout>
+
+</LinearLayout>
+
+

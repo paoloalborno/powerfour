@@ -1,0 +1,51 @@
+Porject ID : 
+powerfour-1988
+
+Project number
+556789459442
+
+Client ID:
+556789459442-u5oqqvbuq35ni7r83t3eoi73nuupup3b.apps.googleusercontent.com
+
+API Key :
+AIzaSyCWcKQtsXVhGHfUJtXIlzMOfEJn0HlPTC0
+
+API server key
+AIzaSyDnVbF18CsZfCN-e6XZ0KulDNaKigLJXXI
+AIzaSyDnVbF18CsZfCN-e6XZ0KulDNaKigLJXXI
+Sender ID
+556789459442
+
+
+Stringa per creare la chiave da android debug keystore
+
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Paulie\.android\debug.keystore -list -v
+pwd : android
+
+
+Alias name: androiddebugkey
+Creation date: Nov 4, 2014
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Android Debug, O=Android, C=US
+Issuer: CN=Android Debug, O=Android, C=US
+Serial number: cc4b439
+Valid from: Tue Nov 04 16:23:04 CET 2014 until: Thu Oct 27 17:23:04 CEST 2044
+Certificate fingerprints:
+         MD5:  EC:F8:7B:0E:E8:75:4D:64:F9:67:E9:9B:6A:4E:F0:B1
+         SHA1: E7:A4:FB:7F:D7:63:1B:67:31:CE:89:AE:CB:F8:25:1C:52:1B:C7:2C
+         SHA256: C1:79:C1:D5:4A:BB:B6:1F:EF:F8:BD:19:7D:F6:C3:3F:EC:47:15:E8:B9:
+04:4E:C3:3F:FF:25:CB:2B:F2:E2:54
+         Signature algorithm name: SHA256withRSA
+         Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: A2 54 ED 2D E7 C5 57 66   52 11 33 9C 62 E1 CF F7  .T.-..WfR.3.b...
+0010: BB E1 93 F4                                        ....
+]
+]

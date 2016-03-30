@@ -1,8 +1,6 @@
 package com.powerfour;
 
 import android.app.Activity;
-import android.nfc.Tag;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,16 +23,17 @@ public class CustomList extends ArrayAdapter<String> {
     @Override
     public View getView(int position, View view, ViewGroup parent) {
 
-
         LayoutInflater inflater = context.getLayoutInflater();
-
         View rowView = inflater.inflate(R.layout.list_single, parent, false);
-
         TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
 
+        //PAUL: inserisco il testo, ottenendolo dalla listOfContents
         txtTitle.setText(listOfContents.get(position));
         txtTitle.setAllCaps(true);
+
+        //PAUL: cambio di icona per tipoloia evento, automaticamente
+        //in base al contenuto del test dell'evento
 
         if(listOfContents.get(position).contains("BF4")){
             imageView.setImageResource(R.drawable.bf4);
@@ -46,37 +45,9 @@ public class CustomList extends ArrayAdapter<String> {
             imageView.setImageResource(R.drawable.rad);
         }
 
+        //PAUL: set della Tag in caso necessitassimo di usare la riga più avanti
         rowView.setTag("Event"+position);
         return rowView;
     }
-
-
-
-    /*
-    private final Activity context;
-    private final String[] web;
-    private final Integer[] imageId;
-
-    public CustomList(Activity context, String[] web, Integer[] imageId) {
-        super(context, R.layout.list_single, web);
-        this.context = context;
-        this.web = web;
-        this.imageId = imageId;
-
-    }
-
-    @Override
-    public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View rowView = inflater.inflate(R.layout.list_single, null, true);
-        TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
-
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
-        txtTitle.setText(web[position]);
-
-        imageView.setImageResource(imageId[position]);
-        return rowView;
-    }*/
-
 }
 

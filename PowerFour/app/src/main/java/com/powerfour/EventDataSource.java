@@ -11,9 +11,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class EventDataSource {
 
-    // Database fields
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
+
+    //Evento per ora formato da ID + COMMENTO
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_COMMENT };
 
     public EventDataSource(Context context) {
@@ -31,22 +32,23 @@ public class EventDataSource {
     public PW4Event createPW4Event(String event) {
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_COMMENT, event);
-        long insertId = database.insert(MySQLiteHelper.TABLE_COMMENTS, null,
-                values);
+
+        long insertId = database.insert(MySQLiteHelper.TABLE_COMMENTS, null, values);
         Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
                 allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
                 null, null, null);
         cursor.moveToFirst();
+
         PW4Event newPW4Event = cursorToEvent(cursor);
         cursor.close();
+
         return newPW4Event;
     }
 
     public void deletePW4Event(PW4Event PW4event) {
         long id = PW4event.getId();
-        System.out.println("Comment deleted with id: " + id);
-        database.delete(MySQLiteHelper.TABLE_COMMENTS, MySQLiteHelper.COLUMN_ID
-                + " = " + id, null);
+        System.out.println("Event deleted ID: " + id);
+        database.delete(MySQLiteHelper.TABLE_COMMENTS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
     }
 
     public List<PW4Event> getAllComments() {
@@ -54,14 +56,14 @@ public class EventDataSource {
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
                 allColumns, null, null, null, null, null);
-
         cursor.moveToFirst();
+
         while (!cursor.isAfterLast()) {
             PW4Event comment = cursorToEvent(cursor);
             allEvents.add(comment);
             cursor.moveToNext();
         }
-        // make sure to close the cursor
+
         cursor.close();
         return allEvents;
     }
